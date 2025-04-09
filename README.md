@@ -9,6 +9,7 @@ Uma ferramenta de Inteligência Artificial projetada para empoderar empreendedor
 - [Introdução](#introdução)
 - [Objetivos](#objetivos)
 - [Funcionalidades](#funcionalidades)
+- [Diagramas](#diagramas)
 - [Arquitetura e Tecnologias](#arquitetura-e-tecnologias)
 - [Soluções Integradas](#soluções-integradas)
 - [Aplicações Setoriais](#aplicações-setoriais)
@@ -16,6 +17,7 @@ Uma ferramenta de Inteligência Artificial projetada para empoderar empreendedor
 - [Próximos Passos](#próximos-passos)
 - [Contribuição](#contribuição)
 - [Contato](#contato)
+
 
 ## Introdução
 
@@ -34,6 +36,46 @@ A IA do Empreendedor foi desenvolvida para empoderar os líderes de negócio, ut
 - **Monitoramento em Tempo Real:** Acompanhamento contínuo de indicadores e métricas essenciais.
 - **Personalização de Dashboards:** Visualizações customizadas que se adaptam ao perfil e às necessidades específicas do negócio.
 - **Integração com APIs:** Conexão com diversos serviços que fortalecem o ecossistema Xperience.
+
+## Diagramas
+
+### Diagrama de Arquitetura
+```mermaid
+flowchart TD
+    A[Interface com Streamlit] --> B[Microserviços RESTful]
+    B --> C[Machine Learning e IA]
+    B --> D[Banco de Dados]
+```
+*Este diagrama ilustra a arquitetura geral da IA do Empreendedor, mostrando como os diferentes componentes interagem entre si.*
+
+### Diagrama de Fluxo de Dados
+```mermaid
+flowchart LR
+    A[Entrada de Dados] --> B[Processamento de Dados]
+    B --> C[Armazenamento]
+    C --> D[Visualização Interativa]
+```
+*Este diagrama representa o fluxo de dados dentro da plataforma, detalhando como as informações são processadas e utilizadas para gerar insights.*
+
+### Diagrama de Casos de Uso
+```mermaid
+flowchart TD
+    U[Usuário] --> A[Análise de Dados de Mercado]
+    U --> B[Visualização de Relatórios]
+    U --> C[Monitoramento em Tempo Real]
+```
+*Este diagrama apresenta os principais casos de uso da plataforma, destacando as interações entre os usuários e o sistema.*
+
+### Diagrama de Sequência
+```mermaid
+sequenceDiagram
+    participant U as Usuário
+    participant S as Sistema
+    U->>S: Solicita dados
+    S->>S: Processa dados
+    S-->>U: Envia resposta
+```
+*Este diagrama mostra a sequência de interações entre os componentes do sistema para realizar uma tarefa específica.*
 
 ## Arquitetura e Tecnologias
 
@@ -80,3 +122,4 @@ Contribuições são sempre bem-vindas! Para sugerir melhorias, reportar problem
 ## Contato
 
 Para mais informações, entre em contato com a equipe responsável ou acesse o [repositório oficial](#) para detalhes adicionais.
+
