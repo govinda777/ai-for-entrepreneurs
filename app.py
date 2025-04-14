@@ -1,13 +1,38 @@
 import streamlit as st
 import os
+import sys
 from dotenv import load_dotenv
 
-# Import components
-from app.components.dashboard import render_dashboard
-from app.components.business_map import render_business_map
-from app.components.chat import render_chat
-from app.components.web3_auth import render_auth_component
-from app.components.advanced_charts import render_advanced_dashboard
+# Adicionar o diretório atual ao path para permitir importações relativas
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+# Tentar importar componentes como pacotes primeiro
+try:
+    # Import components
+    from app.components.dashboard import render_dashboard
+    from app.components.business_map import render_business_map
+    from app.components.chat import render_chat
+    from app.components.web3_auth import render_auth_component
+    from app.components.advanced_charts import render_advanced_dashboard
+except ImportError:
+    # Caso falhe, importar diretamente (para desenvolvimento)
+    try:
+        from components.dashboard import render_dashboard
+        from components.business_map import render_business_map
+        from components.chat import render_chat
+        from components.web3_auth import render_auth_component
+        from components.advanced_charts import render_advanced_dashboard
+    except ImportError:
+        st.error("""
+        Erro ao importar componentes. Verifique se a estrutura de diretórios está correta.
+        
+        Execute o comando: 
+        ```
+        mkdir -p app/components
+        touch app/__init__.py app/components/__init__.py
+        ```
+        """)
+        st.stop()
 
 # Carregar variáveis de ambiente
 load_dotenv()

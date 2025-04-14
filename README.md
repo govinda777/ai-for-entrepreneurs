@@ -111,9 +111,9 @@ A plataforma adapta-se às necessidades específicas de diferentes setores:
 
 ## Streamlit components
 
-- [ ] ChatBox: https://github.com/liunux4odoo/streamlit-chatbox
-- [ ] Gráficos: https://github.com/drogbadvc/streamlit-apexcharts
-- [ ] Elements: https://github.com/okld/streamlit-elements
+- [x] ChatBox: https://github.com/liunux4odoo/streamlit-chatbox
+- [x] Gráficos: https://github.com/drogbadvc/streamlit-apexcharts
+- [x] Elements: https://github.com/okld/streamlit-elements
 
 ## Próximos Passos
 
@@ -130,4 +130,139 @@ Contribuições são sempre bem-vindas! Para sugerir melhorias, reportar problem
 ## Contato
 
 Para mais informações, entre em contato com a equipe responsável ou acesse o [repositório oficial](#) para detalhes adicionais.
+
+## Instalação e Execução
+
+### Pré-requisitos
+- Python 3.9+ 
+- pip (gerenciador de pacotes do Python)
+- Git
+
+### 1. Clone o repositório
+```bash
+git clone https://github.com/seu-usuario/ai-for-entrepreneurs.git
+cd ai-for-entrepreneurs
+```
+
+### 2. Configuração do ambiente
+
+#### Opção 1: Utilizando o script de configuração (recomendado)
+Para Linux/macOS:
+```bash
+# Torne o script executável
+chmod +x setup.sh
+# Execute o script de configuração
+./setup.sh
+```
+
+Este script irá:
+- Verificar a versão do Python
+- Criar um ambiente virtual
+- Instalar todas as dependências
+- Configurar a estrutura de diretórios correta
+- Criar o arquivo .env a partir do .env.example
+
+#### Opção 2: Configuração manual
+
+##### Crie e ative um ambiente virtual
+```bash
+# Para Linux/macOS
+python -m venv venv
+source venv/bin/activate
+
+# Para Windows
+python -m venv venv
+venv\Scripts\activate
+```
+
+##### Instale as dependências
+```bash
+pip install -r requirements.txt
+```
+
+##### Prepare a estrutura do projeto
+```bash
+# Criar __init__.py nos diretórios para que sejam reconhecidos como pacotes Python
+mkdir -p app/components
+touch app/__init__.py
+touch app/components/__init__.py
+```
+
+### 3. Configuração de variáveis de ambiente
+Crie um arquivo `.env` na raiz do projeto baseado no modelo `.env.example`:
+
+```bash
+cp .env.example .env
+# Edite o arquivo .env com suas configurações
+```
+
+### 4. Execute a aplicação
+```bash
+streamlit run app.py
+```
+
+A aplicação estará disponível em http://localhost:8501
+
+### 5. Verificação da Instalação
+
+Após iniciar a aplicação, você deverá ver uma interface semelhante a esta:
+
+![Screenshot da aplicação](./assets/wireframe.jpeg)
+
+Se você encontrar algum problema, consulte a seção "Solução de Problemas" abaixo.
+
+### Estrutura de Diretórios
+```
+ai-for-entrepreneurs/
+├── app/
+│   ├── __init__.py
+│   ├── components/
+│   │   ├── __init__.py
+│   │   ├── dashboard.py
+│   │   ├── business_map.py
+│   │   ├── chat.py
+│   │   ├── web3_auth.py
+│   │   └── advanced_charts.py
+│   ├── api/
+│   ├── blockchain/
+│   ├── core/
+│   ├── data/
+│   ├── models/
+│   └── utils/
+├── assets/
+├── tests/
+├── .env.example
+├── .env
+├── app.py
+├── requirements.txt
+├── setup.sh
+└── README.md
+```
+
+### Solução de Problemas
+
+#### Erro: No module named 'app.components'
+Se você encontrar este erro, certifique-se de:
+1. Ter criado os arquivos `__init__.py` em cada diretório conforme indicado acima
+2. Estar executando a aplicação a partir da raiz do projeto
+3. Ter instalado todas as dependências corretamente
+
+#### Erro ao executar gráficos com streamlit-elements
+Certifique-se de que o pacote `streamlit-elements` está instalado corretamente:
+```bash
+pip install streamlit-elements
+```
+
+Para melhor desempenho, instale o módulo Watchdog conforme recomendado:
+```bash
+# Para macOS
+xcode-select --install
+pip install watchdog
+
+# Para outros sistemas
+pip install watchdog
+```
+
+#### Configuração do Web3
+A integração com Web3/Metamask requer configurações adicionais se você estiver trabalhando com blockchains reais. Consulte a documentação do pacote `web3` para mais detalhes.
 
