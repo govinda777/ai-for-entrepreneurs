@@ -4,6 +4,8 @@
 
 Uma ferramenta de Inteligência Artificial projetada para empoderar empreendedores, transformando dados em insights estratégicos para a tomada de decisões mais seguras. Baseada na teoria do Oceano Azul, a plataforma identifica oportunidades inexploradas e cria novos espaços de mercado, ajudando empresas a inovar sem a pressão da concorrência tradicional.
 
+![wireframe](./assets/wireframe.png)
+
 ## Sumário
 
 - [Introdução](#introdução)
@@ -106,6 +108,12 @@ A plataforma adapta-se às necessidades específicas de diferentes setores:
 - **Transformação Digital:** Aceleração na implementação de tecnologias que abrem novos espaços de mercado.
 - **Inovação Contínua:** Processos estruturados para a contínua geração e validação de ideias inovadoras.
 - **Empoderamento das Equipes:** Ferramentas visuais e insights estratégicos que fortalecem a capacidade decisória dos colaboradores.
+
+## Streamlit components
+
+- [ ] ChatBox: https://github.com/liunux4odoo/streamlit-chatbox
+- [ ] Gráficos: https://github.com/drogbadvc/streamlit-apexcharts
+- [ ] Elements: https://github.com/okld/streamlit-elements
 
 ## Próximos Passos
 
